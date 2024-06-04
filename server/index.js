@@ -27,10 +27,7 @@ app.use(express.json())
 
   const connectDB = async () => {
     try {
-      await mongoose.connect(process.env.MONGO_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
+      await mongoose.connect(process.env.MONGO_URL);
       console.log("MongoDB connected");
     } catch (error) {
       console.error("MongoDB connection error:", error);
@@ -40,6 +37,8 @@ app.use(express.json())
     app.listen(PORT, () => {
       console.log(`App listening on port ${PORT}`);
     });
+  }).catch((err)=>{
+    console.log(err)
   });
 
 app.get("/",(req,res)=>{
