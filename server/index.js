@@ -2,10 +2,11 @@ const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
 const userModel = require("./models/Users")
-const server = require('http').createServer();
+const cookieParser=require('cookie-parser')
+// const server = require('http').createServer();
 require("dotenv").config();
 const { MONGO_URL,PORT} = process.env;
-
+app.use(cookieParser())
 // const port = process.env. || 3001
 const app = express()
 app.use(

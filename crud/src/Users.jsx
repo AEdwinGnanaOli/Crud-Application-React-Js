@@ -1,8 +1,9 @@
 import React , {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-function Users()
-{
+
+function Users(){
+    axios.defaults.withCredentials=true
     const[users,setUsers] = useState([])
 
     useEffect(()=>{
