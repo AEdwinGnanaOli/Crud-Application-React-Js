@@ -13,7 +13,7 @@ function CreateUser()
 
     const Submit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3001/create", {name,email,age})
+        axios.post("'https://crud-application-react-js.onrender.com/create", {name,email,age})
         .then(result =>{console.log(result)
             navigate('/')
         })
