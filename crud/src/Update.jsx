@@ -23,7 +23,7 @@ function UpdateUser()
 
     const Update = (e) => {
         e.preventDefault();
-        axios.put("http://localhost:3001/update/"+id, {name,email,age})
+        axios.put("'https://crud-application-react-js.onrender.com/update/"+id, {name,email,age})
         .then(result =>{console.log(result)
             navigate('/')
         })
