@@ -15,7 +15,7 @@ app.use(
     })
   );
   app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://golden-nasturtium-2ddbc3.netlify.app');
+    res.header('Access-Control-Allow-Origin', 'https://visionary-crumble-ccc1fb.netlify.app');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
