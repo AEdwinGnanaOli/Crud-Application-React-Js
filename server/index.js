@@ -10,7 +10,7 @@ const { MONGO_URL,PORT} = process.env;
 const app = express()
 app.use(
     cors({
-      origin: ["https://golden-nasturtium-2ddbc3.netlify.app/"],
+      origin: ["https://golden-nasturtium-2ddbc3.netlify.app"],
       methods: ["GET", "POST", "PUT", "DELETE"],
       credentials: true,
     })
