@@ -6,13 +6,13 @@ function Users()
     const[users,setUsers] = useState([])
 
     useEffect(()=>{
-        axios.get('http://localhost:3001')
+        axios.get('https://crud-application-react-js.onrender.com')
         .then(result => setUsers(result.data))
         .catch(err => console.log(err))
     },[])
 
     const handleDelete = (id) => {
-        axios.delete('http://localhost:3001/delete/'+id)
+        axios.delete('https://crud-application-react-js.onrender.com/delete/'+id)
         .then(res => {console.log(res)
           window.location.reload()})
         .catch(err => console.log(err))
