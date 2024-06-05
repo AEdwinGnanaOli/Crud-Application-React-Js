@@ -7,7 +7,7 @@ function Users(){
     const[users,setUsers] = useState([])
 
     useEffect(()=>{
-        axios.get('https://crud-application-react-js.onrender.com/')
+        axios.get('https://crud-application-react-js.onrender.com')
         .then(result => {
             console.log(result)
             setUsers(result.data)})
