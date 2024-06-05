@@ -10,7 +10,7 @@ const { MONGO_URL,PORT} = process.env;
 const app = express()
 app.use(
     cors({
-      origin: ["http://localhost:5173"],
+      origin: ["https://golden-nasturtium-2ddbc3.netlify.app"],
       methods: ["GET", "POST", "PUT", "DELETE"],
       credentials: true,
     })
@@ -77,9 +77,3 @@ then(users => res.json(users)).
 catch(err => res.json(err))
 })
 
-// app.listen(port, () => {
-//     console.log(`Server is listening on port ${port}`);
-//   });
-// app.listen(3001 , ()=>{
-//     console.log("Server is running");
-// });
