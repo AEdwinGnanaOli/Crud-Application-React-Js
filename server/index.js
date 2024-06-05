@@ -11,7 +11,7 @@ app.use(cookieParser())
 const app = express()
 app.use(       
     cors({
-      origin: ["https://app.netlify.com/sites/golden-nasturtium-2ddbc3"],
+      origin: ["https://visionary-crumble-ccc1fb.netlify.app"],
     })
   );
   app.use((req, res, next) => {
