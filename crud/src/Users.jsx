@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 function Users(){
-    axios.defaults.withCredentials=true
+    
     const[users,setUsers] = useState([])
 
     useEffect(()=>{

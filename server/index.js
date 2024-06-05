@@ -9,23 +9,31 @@ const { MONGO_URL,PORT} = process.env;
 app.use(cookieParser())
 // const port = process.env. || 3001
 const app = express()
-app.use(
+app.use(       
     cors({
       origin: ["https://golden-nasturtium-2ddbc3.netlify.app"],
-      methods: ["GET", "POST", "PUT", "DELETE"],
-      credentials: true,
     })
   );
-
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://golden-nasturtium-2ddbc3.netlify.app');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 app.use(express.json())
 
-// mongoose.connect(MONGO_URL, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,}
-//   )
-//   .then(() => console.log("MongoDB is  connected successfully"))
-//   .catch((err) => console.error(err));
-
+exports.handler = async (event) => {
+  const response = {
+      statusCode: 200,
+      headers: {
+          'Access-Control-Allow-Origin': 'https://golden-nasturtium-2ddbc3.netlify.app',
+          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
+      },
+      body: JSON.stringify('Hello from Lambda!'),
+  };
+  return response;
+};
   const connectDB = async () => {
     try {
       await mongoose.connect(process.env.MONGO_URL);
