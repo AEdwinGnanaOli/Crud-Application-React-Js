@@ -6,9 +6,9 @@ const cookieParser=require('cookie-parser')
 // const server = require('http').createServer();
 require("dotenv").config();
 const { MONGO_URL,PORT} = process.env;
-app.use(cookieParser())
 // const port = process.env. || 3001
 const app = express()
+app.use(cookieParser())
 app.use(       
     cors({
       origin: ["https://visionary-crumble-ccc1fb.netlify.app"],
