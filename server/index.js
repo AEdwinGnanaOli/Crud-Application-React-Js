@@ -11,29 +11,29 @@ const app = express()
 app.use(cookieParser())
 app.use(       
     cors({
-      origin: ["https://visionary-crumble-ccc1fb.netlify.app"],
+      origin: ["https://main--visionary-crumble-ccc1fb.netlify.app"],
     })
   );
   app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://visionary-crumble-ccc1fb.netlify.app');
+    res.header('Access-Control-Allow-Origin', 'https://main--visionary-crumble-ccc1fb.netlify.app');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
 app.use(express.json())
 
-exports.handler = async (event) => {
-  const response = {
-      statusCode: 200,
-      headers: {
-          'Access-Control-Allow-Origin': 'https://golden-nasturtium-2ddbc3.netlify.app',
-          'Access-Control-Allow-Headers': 'Content-Type',
-          'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
-      },
-      body: JSON.stringify('Hello from Lambda!'),
-  };
-  return response;
-};
+// exports.handler = async (event) => {
+//   const response = {
+//       statusCode: 200,
+//       headers: {
+//           'Access-Control-Allow-Origin': 'https://golden-nasturtium-2ddbc3.netlify.app',
+//           'Access-Control-Allow-Headers': 'Content-Type',
+//           'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
+//       },
+//       body: JSON.stringify('Hello from Lambda!'),
+//   };
+//   return response;
+// };
   const connectDB = async () => {
     try {
       await mongoose.connect(process.env.MONGO_URL);
