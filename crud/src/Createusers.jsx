@@ -13,7 +13,6 @@ function CreateUser() {
     formState: { errors },
   } = useForm();
   const onSubmit = (e) => {
-    e.preventDefault();
     axios
       .post("https://crud-application-react-js.onrender.com/create", {
         name,
