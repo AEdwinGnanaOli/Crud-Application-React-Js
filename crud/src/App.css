@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #00a8ff !important;
+    background-attachment: fixed;
+}
+#user-crud{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    
+}
+#user-crud-create{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+}
+.details{
+    background-color: #fff;
+    width:45rem;
+    padding: 10px;
+    border-radius: 20px;
+}
+.table {
+    width: 100%;
+}
+.create-user{
+    background-color: #fff;
+    width: 30rem;
+    border-radius: 10px;
+    padding: 30px;
+}
+.user-btns button{
+    margin: 10px;
+}
+@media screen and (min-width: 80px)and (max-width: 798px) {
+.details{
+    width:100% !important;
+    border-radius: 0px;
+}
+#user-crud{
+    display: block;
+}
+}
