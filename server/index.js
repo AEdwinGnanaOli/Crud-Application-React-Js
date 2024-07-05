@@ -11,11 +11,11 @@ const app = express()
 app.use(cookieParser())
 app.use(       
     cors({
-      origin: ["https://main--visionary-crumble-ccc1fb.netlify.app"],
+      origin: ["https://visionary-crumble-ccc1fb.netlify.app"],
     })
   );
   app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://main--visionary-crumble-ccc1fb.netlify.app');
+    res.header('Access-Control-Allow-Origin', 'https://visionary-crumble-ccc1fb.netlify.app/');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
