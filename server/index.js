@@ -9,17 +9,11 @@ const { MONGO_URL,PORT} = process.env;
 // const port = process.env. || 3001
 const app = express()
 app.use(cookieParser())
-app.use(       
-    cors({
-      origin: ["https://main--visionary-crumble-ccc1fb.netlify.app"],
-    })
-  );
-  app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://main--visionary-crumble-ccc1fb.netlify.app');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-});
+app.use(cors({
+  origin: ['https://superlative-cactus-a78d6d.netlify.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}))
 app.use(express.json())
 
 // exports.handler = async (event) => {
